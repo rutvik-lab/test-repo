@@ -1,0 +1,6 @@
+line 1: Hello World!
+Line 2: Python is fun.
+Line 3: Learning file handling.
+Line 4: Writing lines to a file.
+Line 5: Task completed successfully.
+Now line 6 coming soon!
