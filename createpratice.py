@@ -351,3 +351,38 @@
 #     word_count = len(word)
 # print("Number of words in the file:", word_count)   
 #                                                                    
+
+
+
+# def factorial(n):
+#     if n < 0:
+#         return "factorial not defined for negative number"
+#     elif n == 0 or n == 1:
+#         return 1
+#     else:
+#         result = 1
+#         for i in range(2, n + 1):
+#             result *= i
+#         return result
+    
+# n = int(input("Enter a number: "))
+# print(factorial(n))
+
+
+def is_prime(n):
+    if n<= 1:
+        return False
+    if n == 2:
+        return True
+    if n % 2 == 0:
+        return False
+    for i in range (3, int(n**0.5) + 1,2 ):
+        if n % i == 0:
+            return False
+    return True
+    
+number = int(input("enter a nubmer: "))
+if is_prime(number):
+    print(number,"is a prime number")
+else:
+    print(number,"is not a prime number")
