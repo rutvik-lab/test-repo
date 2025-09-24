@@ -369,20 +369,76 @@
 # print(factorial(n))
 
 
-def is_prime(n):
-    if n<= 1:
-        return False
-    if n == 2:
-        return True
-    if n % 2 == 0:
-        return False
-    for i in range (3, int(n**0.5) + 1,2 ):
-        if n % i == 0:
-            return False
-    return True
+# def is_prime(n):
+    # if n<= 1:
+#         return False
+#     if n == 2:
+#         return True
+#     if n % 2 == 0:
+#         return False
+#     for i in range (3, int(n**0.5) + 1,2 ):
+#         if n % i == 0:
+#             return False
+#     return True
     
-number = int(input("enter a nubmer: "))
-if is_prime(number):
-    print(number,"is a prime number")
-else:
-    print(number,"is not a prime number")
+# number = int(input("enter a nubmer: "))
+# if is_prime(number):
+#     print(number,"is a prime number")
+# else:
+#     print(number,"is not a prime number")
+
+
+# import math
+
+# def nCr(n, r):
+#     if r > n:
+#         return 0 
+#     return math.factorial(n) // (math.factorial(r) * math.factorial(n - r))
+# n = int(input("Enter a number n: "))
+# r = int(input("Enter a number r: "))
+
+# print("nCr:", nCr(n, r))
+
+# import math 
+
+# def nCr(n, r):
+#     return  math.comb(n, r)
+# n = int(input("Enter a number n: "))
+# r = int(input("Enter a number r: "))
+# print(nCr(n, r))
+
+# def greet(name="User"):
+#     print(f"Hello, {name}! Welcome aboard")
+
+# greet("Rutvik")
+# greet()
+
+
+# def introduce(name="guest", age=18, city="unknown"):
+#     print(f"my name is {name}, I am {age} years old, from {city}.")
+
+# introduce("rutvik", 19, "Halol")
+# introduce("anya")
+# introduce()
+
+# def add_number(*args):
+#     total = 0
+#     for num in args:
+#         total += num 
+#     return total
+
+# print(add_number(1, 2, 3, 4))
+
+# def greet_all(*args):
+#     for name in args:
+#         print(f"Hello, {name}! 👋")
+
+
+# greet_all("Rutvik", "Anya", "Raj")
+
+
+def introduce(greeting, *args):
+    for name in args:
+        print(f"{greeting}, {name}!")
+
+introduce("Good Morning", "Rutvik", "Anya", "Raj",)
