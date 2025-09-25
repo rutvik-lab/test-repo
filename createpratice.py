@@ -581,9 +581,29 @@
 
 
 
-def count_vowels_consonants(S):
-    vowels = "aieouAEIOU"
-    vowels_count = sum(1 for ch in S if ch in vowels)
-    consonant_count = sum(1 for ch in S if ch.isalpha() and ch not in vowels)
-    return vowels_count, consonant_count
-print(count_vowels_consonants("Bharatbrain"))
+# def count_vowels_consonants(S):
+#     vowels = "aieouAEIOU"
+#     vowels_count = sum(1 for ch in S if ch in vowels)
+#     consonant_count = sum(1 for ch in S if ch.isalpha() and ch not in vowels)
+#     return vowels_count, consonant_count
+# print(count_vowels_consonants("Bharatbrain"))
+
+
+def count_vowels_consonants(s):
+    vowels = "aeiouAEIOU"
+    vowel_count = len(list(filter(lambda ch: ch in vowels, s)))
+    consonant_count = len(list(filter(lambda ch: ch.isalpha() and ch not in vowels, s)))
+    return vowel_count, consonant_count
+
+print(count_vowels_consonants("BharatBrain"))
+
+def count_vowels_consonants(s):
+    vowels = "aeiouAEUIO"
+    return {
+        "vowels": sum(ch in vowels for ch in s),
+        "consonants": sum(ch.isalpha() and ch not in vowels for ch in s)
+    }
+print(count_vowels_consonants("rutvik parmar"))
+print(count_vowels_consonants("rutvik vankar"))
+print(count_vowels_consonants("rutvik kumar"))
+
