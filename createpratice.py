@@ -488,9 +488,62 @@
 
 # print(con_app(theme="dark", font="Arial")) 
 
-def order(*items, **details):
-    print("Items ordered:", items)
-    print("Order details:", details)
+# def order(*items, **details):
+#     print("Items ordered:", items)
+#     print("Order details:", details)
 
-order("Pizza", "Coke", address="Mumbai", payment="UPI")
+# order("Pizza", "Coke", address="Mumbai", payment="UPI")
 
+# def greet(**kwargs):
+#     for key, value in kwargs.items():
+#         print(f"{key} = {value}")
+
+# greet(name="Rutvik", age=18, goal="IIT Bombay")
+
+# def intro(*args, **kwargs):
+#     print("Positional arguments:", args)
+#     print("Keyword arguments:", kwargs)
+
+# intro("Hello", "World", name="Rutvik", exam="JEE")
+
+# def student_info(course="JEE", **kwargs):
+#     print(f"Course: {course}")
+#     for key, value in kwargs.items():
+#         print(f"{key}: {value}")
+
+# student_info(name="Rutvik", rank="Top 100", Target="AIR 1")
+# student_info(name="Rajesh", rank="Top 100", Target="AIR 2")
+
+# def find_largest(number):
+#     largest = number[0]
+#     for num in number:
+#         if num > largest:
+#             largest = num
+
+#     return largest
+# nums = [ 12, 32, 23, 434, 4343]
+# print("Largest number is:", find_largest(nums))
+
+
+
+# def find_max(nums):
+#     return max(nums)
+# nums = [12, 343, 43, 545]
+# print("Largest number is:", find_max(nums))
+
+memo = {}
+def fibonacci(n):
+    if n in memo:
+        return memo[n]
+    if n == 0:
+        result = 0
+    elif n == 1:
+        result = 1
+    else:
+        result = fibonacci(n-1) + fibonacci(n-2)
+    memo[n] = result
+    return result
+for i in range(10):
+    print(fibonacci(i), end=" ")
+
+    
