@@ -531,19 +531,59 @@
 # nums = [12, 343, 43, 545]
 # print("Largest number is:", find_max(nums))
 
-memo = {}
-def fibonacci(n):
-    if n in memo:
-        return memo[n]
-    if n == 0:
-        result = 0
-    elif n == 1:
-        result = 1
-    else:
-        result = fibonacci(n-1) + fibonacci(n-2)
-    memo[n] = result
-    return result
-for i in range(10):
-    print(fibonacci(i), end=" ")
+# memo = {}
+# def fibonacci(n):
+#     if n in memo:
+#         return memo[n]
+#     if n == 0:
+#         result = 0
+#     elif n == 1:
+#         result = 1
+#     else:
+#         result = fibonacci(n-1) + fibonacci(n-2)
+#     memo[n] = result
+#     return result
+# for i in range(10):
+#     print(fibonacci(i), end=" ")
 
-    
+# def reverse_string(s):
+#     return s[::-1]
+# text ="BharatBrain"
+# print("Original:", text)
+# print("Reversed:", reverse_string(text))
+
+# def reverse_string(S):
+#     reversed_str = ""
+#     for char in S:
+#         reversed_str =char + reversed_str
+#     return reversed_str
+# print(reverse_string("Rutvik"))
+
+
+# def count_vowels_consonants(s):
+#     vowels = "aeiouAEIOU"
+#     vowel_count = 0
+#     consonant_count = 0
+#     for char in s:
+#         if char.isalpha():
+#             if char in vowels:
+#                 vowel_count += 1
+#             else:
+#                 consonant_count += 1
+
+#     return vowel_count, consonant_count 
+
+# text = input("Enter a text or word: ")
+# v, c = count_vowels_consonants(text)
+
+# print("Vowels:", v)
+# print("Consonants:", c)
+
+
+
+def count_vowels_consonants(S):
+    vowels = "aieouAEIOU"
+    vowels_count = sum(1 for ch in S if ch in vowels)
+    consonant_count = sum(1 for ch in S if ch.isalpha() and ch not in vowels)
+    return vowels_count, consonant_count
+print(count_vowels_consonants("Bharatbrain"))
