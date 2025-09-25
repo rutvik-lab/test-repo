@@ -437,8 +437,60 @@
 # greet_all("Rutvik", "Anya", "Raj")
 
 
-def introduce(greeting, *args):
-    for name in args:
-        print(f"{greeting}, {name}!")
+# def introduce(greeting, *args):
+#     for name in args:
+#         print(f"{greeting}, {name}!")
 
-introduce("Good Morning", "Rutvik", "Anya", "Raj",)
+# introduce("Good Morning", "Rutvik", "Anya", "Raj",)
+
+# def multipty_all(*args):
+#     result = 1
+#     for num in args:
+#         result *= num
+#     return result
+
+# print(multipty_all(2, 3, 4, 5))
+# print(multipty_all(5, 19, 10))
+
+# def sub_all(*args):
+#     if not args:
+#         return 0
+#     result = args[0]
+#     for num in args[1:]:
+#         result -= num
+#     return result
+
+# print(sub_all(10, 2,4))
+
+# def divide_all(*args):
+#     if not args:
+#         return None
+#     result = args[0]
+#     for num in args[1:]:
+#         if num == 0:
+#             return "Division by zero not allowed!"
+#         result /= num
+#     return result
+
+# print(divide_all(100, 2, 5))   
+
+
+# def stu_pro(name, **kwargs):
+#     print(f"Name: {name}")
+#     for key, value in kwargs.items():
+#         print(f"{key}: {value}")
+# stu_pro("Rutvik", age=18, city="Pune",grade="A+")
+
+# def con_app(**kwargs):
+#     defaults = {"theme": "light", "notifications": True}
+#     defaults.update(kwargs)
+#     return defaults
+
+# print(con_app(theme="dark", font="Arial")) 
+
+def order(*items, **details):
+    print("Items ordered:", items)
+    print("Order details:", details)
+
+order("Pizza", "Coke", address="Mumbai", payment="UPI")
+
