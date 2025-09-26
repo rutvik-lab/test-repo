@@ -589,21 +589,127 @@
 # print(count_vowels_consonants("Bharatbrain"))
 
 
-def count_vowels_consonants(s):
-    vowels = "aeiouAEIOU"
-    vowel_count = len(list(filter(lambda ch: ch in vowels, s)))
-    consonant_count = len(list(filter(lambda ch: ch.isalpha() and ch not in vowels, s)))
-    return vowel_count, consonant_count
+# def count_vowels_consonants(s):
+#     vowels = "aeiouAEIOU"
+#     vowel_count = len(list(filter(lambda ch: ch in vowels, s)))
+#     consonant_count = len(list(filter(lambda ch: ch.isalpha() and ch not in vowels, s)))
+#     return vowel_count, consonant_count
 
-print(count_vowels_consonants("BharatBrain"))
+# print(count_vowels_consonants("BharatBrain"))
 
-def count_vowels_consonants(s):
-    vowels = "aeiouAEUIO"
-    return {
-        "vowels": sum(ch in vowels for ch in s),
-        "consonants": sum(ch.isalpha() and ch not in vowels for ch in s)
-    }
-print(count_vowels_consonants("rutvik parmar"))
-print(count_vowels_consonants("rutvik vankar"))
-print(count_vowels_consonants("rutvik kumar"))
+# def count_vowels_consonants(s):
+#     vowels = "aeiouAEUIO"
+#     return {
+#         "vowels": sum(ch in vowels for ch in s),
+#         "consonants": sum(ch.isalpha() and ch not in vowels for ch in s)
+#     }
+# print(count_vowels_consonants("rutvik parmar"))
+# print(count_vowels_consonants("rutvik vankar"))
+# print(count_vowels_consonants("rutvik kumar"))
 
+# list1 = [1, 2, 3, 4, 5, 6]
+# list2 = [3, 4, 5, 9, 6, 5, 7]
+
+# # merged_list =[]
+# # for item in list1 + list2:
+# #     if item not in merged_list:
+# #         merged_list.append(item)
+
+# # print(merged_list)
+
+
+# # # if order doesn't matter or this output is like increasing order 
+# # merged_list = list(set(list1 + list2))
+# # print(merged_list)
+
+# merged_list = list(dict.fromkeys(list1 + list2))
+
+# # this will only merged two list in same order 
+# print(merged_list)
+
+
+# # using set 
+# common = list(set(list1)  &  set(list2))
+# print(common)
+# #  using list comprehension 
+# common1 = ([x for x in list1 if x in list2])
+# print(common1)
+# # using set + list comprehension
+# common3 = [] 
+# [common3.append(x) for x in list1 if x in list2 and x not in common3]
+# print(common3)
+
+# num = list(range(0, 100))
+# print(num)
+
+# num = [ i for i in range(1, 1000)]
+# print(num)
+
+
+# for i in range(1, 70):
+#     num = int("9" * i)
+#     print(num)
+
+
+# save as logo_svg.py
+
+
+
+# import svgwrite
+
+# def make_bharatbrain_svg(path="bharatbrain_logo.svg", size=(400,120)):
+#     dwg = svgwrite.Drawing(path, size=size)
+#     cx, cy = 60, 60
+#     # draw a simple "brain" made of overlapping circles
+#     radii = [18, 14, 18, 12, 8]
+#     offsets = [-26, -10, 10, 26, 0]
+#     for r, off in zip(radii, offsets):
+#         dwg.add(dwg.circle(center=(cx+off, cy), r=r, fill="#FFB400", fill_opacity=0.95, stroke="none"))
+#     # add connecting small circles to make it techy
+#     dots = [(cx-40,cy-18),(cx-18,cy-36),(cx+18,cy-36),(cx+40,cy-18),(cx,cy+28)]
+#     for x,y in dots:
+#         dwg.add(dwg.circle(center=(x,y), r=4, fill="#F45D01"))
+
+#     # Add brand name
+#     dwg.add(dwg.text("BharatBrain",
+#                      insert=(140, 72),
+#                      font_size="32px",
+#                      font_family="Segoe UI, Arial, Helvetica",
+#                      fill="#0B3D91"))
+#     dwg.save()
+#     print("Saved:", path)
+
+# if __name__ == "__main__":
+#     make_bharatbrain_svg()
+
+
+# save as logo_png.py
+from PIL import Image, ImageDraw, ImageFont
+
+def make_bharatbrain_png(path="bharatbrain_logo.png", size=(800,300)):
+    img = Image.new("RGBA", size, (255,255,255,0))
+    draw = ImageDraw.Draw(img)
+
+    # brain cluster
+    base_x, base_y = 140, 140
+    circles = [(-90,0,90),(-50,-30,60),(-10,10,70),(40,-20,50),(80,10,40)]
+    for dx,dy,r in circles:
+        bbox = [base_x+dx-r, base_y+dy-r, base_x+dx+r, base_y+dy+r]
+        draw.ellipse(bbox, fill=(255,180,60,255))
+
+    # little connectors
+    for x,y in [(50,60),(120,40),(200,50),(240,90)]:
+        draw.ellipse((base_x+x-6, base_y+y-6, base_x+x+6, base_y+y+6), fill=(244,93,1,255))
+
+    # add text (choose a TTF if you want a nicer font)
+    try:
+        font = ImageFont.truetype("arial.ttf", 60)
+    except:
+        font = ImageFont.load_default()
+    draw.text((360,110), "RutvikParmar", font=font, fill=(11,61,145,255))
+
+    img.save(path)
+    print("Saved:", path)
+
+if __name__ == "__main__":
+    make_bharatbrain_png()
